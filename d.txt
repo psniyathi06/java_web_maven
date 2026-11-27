@@ -1,0 +1,150 @@
+
+# 1. Check Docker version
+docker --version
+
+# 2. Check Docker images
+docker images
+
+# 3. Build Docker image
+docker build -t java_web_maven .
+
+# 4. Run container with port mapping
+docker run -d -p 8081:8081 --name java_web_maven_c java_web_maven
+
+# Alternative: Run without port mapping
+docker run -d java_web_maven
+
+# 5. List running containers
+docker ps
+
+# 6. List all containers (including stopped)
+docker ps -a
+
+# 7. Check container logs
+docker logs java_web_maven_c
+
+# 8. Follow container logs continuously
+docker logs -f java_web_maven_c
+
+# 9. Stop container
+docker stop java_web_maven_c
+
+# 10. Start stopped container
+docker start java_web_maven_c
+
+# 11. Restart container
+docker restart java_web_maven_c
+
+# 12. Remove container
+docker rm java_web_maven_c
+
+# 13. Force remove container
+docker rm -f java_web_maven_c
+
+# 14. Remove Docker image
+docker rmi java_web_maven
+
+# 15. Force remove image
+docker rmi -f java_web_maven
+
+# 16. Login to Docker Hub
+docker login
+
+# 17. Tag image for Docker Hub
+docker tag java_web_maven username/java_web_maven:latest
+
+# 18. Push image to Docker Hub
+docker push username/java_web_maven:latest
+
+# 19. Pull image from Docker Hub
+docker pull username/java_web_maven:latest
+
+# 20. Run downloaded image
+docker run -d -p 8081:8081 username/java_web_maven:latest
+
+# 21. Remove unused Docker resources
+docker system prune
+
+# 1. Check Docker version
+docker --version
+
+# 2. Check Docker images
+docker images
+
+# 3. Build Docker image
+docker build -t java_web_maven .
+
+# 4. Run container with port mapping
+docker run -d -p 8081:8081 --name java_web_maven_c java_web_maven
+
+# Alternative: Run without port mapping
+docker run -d java_web_maven
+
+# 5. List running containers
+docker ps
+
+# 6. List all containers (including stopped)
+docker ps -a
+
+# 7. Check container logs
+docker logs java_web_maven_c
+
+# 8. Follow container logs continuously
+docker logs -f java_web_maven_c
+
+# 9. Stop container
+docker stop java_web_maven_c
+
+# 10. Start stopped container
+docker start java_web_maven_c
+
+# 11. Restart container
+docker restart java_web_maven_c
+
+# 12. Remove container
+docker rm java_web_maven_c
+
+# 13. Force remove container
+docker rm -f java_web_maven_c
+
+# 14. Remove Docker image
+docker rmi java_web_maven
+
+# 15. Force remove image
+docker rmi -f java_web_maven
+
+# 16. Login to Docker Hub
+docker login
+
+# 17. Tag image for Docker Hub
+docker tag java_web_maven username/java_web_maven:latest
+
+# 18. Push image to Docker Hub
+docker push username/java_web_maven:latest
+
+# 19. Pull image from Docker Hub
+docker pull username/java_web_maven:latest
+
+# 20. Run downloaded image
+docker run -d -p 8081:8081 username/java_web_maven:latest
+
+# 21. Remove unused Docker resources
+docker system prune
+
+
+
+FROM tomcat:9.0
+
+COPY target/your-war-file.war /usr/local/tomcat/webapps/ROOT.war
+
+EXPOSE 8080
+
+CMD ["catalina.sh", "run"]
+
+FROM tomcat:9.0
+
+COPY target/your-war-file.war /usr/local/tomcat/webapps/ROOT.war
+
+EXPOSE 8080
+
+CMD ["catalina.sh", "run"]
